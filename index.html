@@ -4,71 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!--Button to start quiz-->
-    <div class="start_btn"><button>Start Quiz</button></div>
-    <div class="info_box">
-        <div class="info-title"><span>Some Rules of this Quiz</span></div>
-        <div class="info-list">
-            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
-            <div class="info">2. Once you select your answer, it can't be undone.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
-            <div class="info">5. You'll get points on the basis of your correct answers.</div>
-        </div>
-        <div class="buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="restart">Continue</button>
-        </div>
-    </div>
-    <!--Quiz box-->
-    <div class="quiz_box">
-        <header>
-            <div class="title">Quiz Application</div>
-            <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec">15</div>
-            </div>
-            <div class="time_line"></div>
-        </header>
-        <section>
-            <div class="que_text">
-                
-            </div>
-            <div class="option_list">
-                
-            </div>
-        </section>
+    <header>
+        <a id="leaderboard-link">View Highscores <i class="fas fa-hand-point-left fa-lg"></i></a> 
         
-        <footer>
-            <div class="total_que">
-                
+        <time>Time: <span id="time"></span></time>
+    </header>
+
+    <main>
+        <div id="start-card" class="card">
+            <h2 id="title">Coding Quiz Challenge</h2>
+            <p>Try to answer to following code-related questions within the time limit. <br><br> Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <button id="start-button" class="button">Start Quiz</button>
+        </div>
+
+        <div hidden id="question-card" class="card">
+
+            <h2 id="question-text"></h2>
+
+            <div id="quiz-options">
+                <button id="option0" class="button option-button"></button>
+                <button id="option1" class="button option-button"></button>
+                <button id="option2" class="button option-button"></button>
+                <button id="option3" class="button option-button"></button>
             </div>
-            <button class="next_btn">Next Que</button>
-        </footer>
-    </div>
 
-    <!--Results section-->
-    
-    <div class="result_box">
-        <div class="icon">
-            <i class="fas fa-crown"></i>
-        </div>
-        <div class="complete_text">You've completed the Quiz!</div>
-        <div class="score_text">
-            
-        </div>
-        <div class="buttons">
-            <button class="restart">Replay Quiz</button>
-            <button class="quit">Quit Quiz</button>
-        </div>
-    </div>
+            <div id="result-div">
+                <hr>
+                <p id="result-text"></p>
+            </div>
 
-    <!--JavaScript questions-->
-    <script src="js/questions.js"></script>
-    
-    <script src="js/script.js"></script>
+        </div>
+
+        <div hidden id="score-card" class="card">
+            <h2>All done!</h2>
+            <p>Your final score is <span id="score"></span>.</p>
+            <form class="inline-form" id="submission-form">
+                  <label for="initials">Enter initials: </label>
+                  <input type="text" id="initials">
+                  <button id="submit-button" class="button">Submit</button>
+            </form>
+        </div>
+
+        <div hidden id="leaderboard-card" class="card">
+            <h2>Highscores</h2>
+            <ol id="highscore-list">
+            </ol>
+            <div class="inline-buttons">
+                <button id="back-button" class="button">Go Back</button>
+                <button id="clear-button" class="button">Clear Highscores</button>
+            </div>
+        </div>
+
+    </main>
+    <script src="./question.js"></script>
+    <!--<script src="./assets/js/script.js"></script>-->
 </body>
 </html>

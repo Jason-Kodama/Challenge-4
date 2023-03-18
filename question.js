@@ -24,28 +24,28 @@ let questions = [
     {
         numb: 3,
         question: "How can you make a numbered list in HTML?",
-        answer: "<ol>",
+        answer: "ol",
         options: [
-            "<dl>",
-            "<list>",
-            "<ol>",
-            "<ul>"
+            "dl",
+            "list",
+            "ol",
+            "ul"
         ]
     },
     {
         numb: 4,
         question: "What is the correct HTML for making a drop-down list?",
-        answer: "<select>",
+        answer: "select",
         options: [
-            "<select>",
-            "<list>",
-            "<input type='dropdown'>",
-            "<input type='list>"
+            "select",
+            "list",
+            "input type='dropdown'",
+            "input type='list"
         ]
     },
     {
         numb: 5,
-        question: "In HTML, which attribute is used to specfiy that an input field must be filled out?",
+        question: "In HTML, which attribute is used to specify that an input field must be filled out?",
         answer: "required",
         options: [
             "formvalidate",
@@ -113,12 +113,12 @@ let questions = [
     {
         numb: 11,
         question: "Inside which HTML element do we put the JavaScript?",
-        answer: "<script>",
+        answer: "script",
         options: [
-            "<javascript>",
-            "<script>",
-            "<js>",
-            "<scripting>"
+            "javascript",
+            "script",
+            "js",
+            "scripting"
         ]
     },
     {
