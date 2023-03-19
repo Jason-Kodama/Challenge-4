@@ -1,105 +1,105 @@
 // Created an array for the questions.
 const questionS = [
-    {
-        questionText: "What does CSS stand for?",
-        answer: "Cascading Style Sheet",
-        options: [
-            "Computer Style Sheet",
-            "Common Style Sheet",
-            "Colorful Style Sheet",
-            "Cascading Style Sheet"
-        ]
-    },
-    {
-        questionText: "How can you make a numbered list in HTML?",
-        answer: "ol",
-        options: [
-            "dl",
-            "list",
-            "ol",
-            "ul"
-        ]
-    },
-    {
-        questionText: "What is the correct HTML for making a drop-down list?",
-        answer: "select",
-        options: [
-            "select",
-            "list",
-            "input type='dropdown'",
-            "input type='list"
-        ]
-    },
-    {
-        questionText: "Which HTML attribute is used to define inline styles?",
-        answer: "style",
-        options: [
-            "font",
-            "class",
-            "styles",
-            "style"
-        ]
-    },
-    {
-        questionText: "Which is the correct CSS syntax?",
-        answer: "body {color: black;}",
-        options: [
-            "{body;color:black;}",
-            "body {color: black;}",
-            "{body:color=black;}",
-            "body:color=black;"
-        ]
-    },
-    {
-        questionText: "How do you select an element with id 'demo'?",
-        answer: "#demo",
-        options: [
-            "demo",
-            "*demo",
-            "#demo",
-            ".demo"
-        ]
-    },
-    {
-        questionText: "Inside which HTML element do we put the JavaScript?",
-        answer: "script",
-        options: [
-            "javascript",
-            "script",
-            "js",
-            "scripting"
-        ]
-    },
-    {
-        questionText: "How do you create a function in JavaScript?",
-        answer: "function myFunction()",
-        options: [
-            "function myFunction()",
-            "function = myFunction()",
-            "function:myFunction()",
-            "myFunction():function"
-        ]
-    },
-    {
-        questionText: "How does a FOR loop start?",
-        answer: "for (i = 0; i <= 5; i++)",
-        options: [
-            "for i = 1 to 5",
-            "for (i <= 5; i++)",
-            "for (i = 0; i <= 5; i++)",
-            "for (i = 0; i <= 5)"
-        ]
-    },
-    {
-        questionText: "Which event occurs when the user clicks on an HTML element?",
-        answer: "onclick",
-        options: [
-            "onclick",
-            "onchange",
-            "onmouseover",
-            "onmouseclick"
-        ]
-    },
+  {
+    questionText: "What does CSS stand for?",
+    answer: "Cascading Style Sheet",
+    options: [
+      "Computer Style Sheet",
+      "Common Style Sheet",
+      "Colorful Style Sheet",
+      "Cascading Style Sheet"
+    ]
+  },
+  {
+    questionText: "How can you make a numbered list in HTML?",
+    answer: "ol",
+    options: [
+      "dl",
+      "list",
+      "ol",
+      "ul"
+    ]
+  },
+  {
+    questionText: "What is the correct HTML for making a drop-down list?",
+    answer: "select",
+    options: [
+      "select",
+      "list",
+      "input type='dropdown'",
+      "input type='list"
+    ]
+  },
+  {
+    questionText: "Which HTML attribute is used to define inline styles?",
+    answer: "style",
+    options: [
+      "font",
+      "class",
+      "styles",
+      "style"
+    ]
+  },
+  {
+    questionText: "Which is the correct CSS syntax?",
+    answer: "body {color: black;}",
+    options: [
+      "{body;color:black;}",
+      "body {color: black;}",
+      "{body:color=black;}",
+      "body:color=black;"
+    ]
+  },
+  {
+    questionText: "How do you select an element with id 'demo'?",
+    answer: "#demo",
+    options: [
+      "demo",
+      "*demo",
+      "#demo",
+      ".demo"
+    ]
+  },
+  {
+    questionText: "Inside which HTML element do we put the JavaScript?",
+    answer: "script",
+    options: [
+      "javascript",
+      "script",
+      "js",
+      "scripting"
+    ]
+  },
+  {
+    questionText: "How do you create a function in JavaScript?",
+    answer: "function myFunction()",
+    options: [
+      "function myFunction()",
+      "function = myFunction()",
+      "function:myFunction()",
+      "myFunction():function"
+    ]
+  },
+  {
+    questionText: "How does a FOR loop start?",
+    answer: "for (i = 0; i <= 5; i++)",
+    options: [
+      "for i = 1 to 5",
+      "for (i <= 5; i++)",
+      "for (i = 0; i <= 5; i++)",
+      "for (i = 0; i <= 5)"
+    ]
+  },
+  {
+    questionText: "Which event occurs when the user clicks on an HTML element?",
+    answer: "onclick",
+    options: [
+      "onclick",
+      "onchange",
+      "onmouseover",
+      "onmouseclick"
+    ]
+  },
 ];
 // Creating a variable for the card id's
 const startCard = document.querySelector("#start-card");
@@ -132,11 +132,11 @@ document.querySelector("#start-button").addEventListener("click", startQuiz);
 
 
 function startQuiz() {
-  
+
   hideCards();
   questionCard.removeAttribute("hidden");
 
-  
+
   currentQuestion = 0;
   displayQuestion();
 
@@ -279,6 +279,17 @@ function renderLeaderboard() {
       leaderboardEntry.initials + " - " + leaderboardEntry.score;
     highscoreList.append(newListItem);
   }
+}
+function sortLeaderboard() {
+  let leaderboardArray = getLeaderboard();
+  if (!leaderboardArray) {
+    return;
+  }
+
+  leaderboardArray.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  return leaderboardArray;
 }
 
 const clearButton = document.querySelector("#clear-button");
