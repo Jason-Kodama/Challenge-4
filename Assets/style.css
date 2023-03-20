@@ -14,6 +14,10 @@ main {
     align-items:center;
     justify-content: center;
 }
+#start-button:hover {
+    background:seagreen;
+    color:goldenrod
+}
 .button {
     display: block;
     border-radius: 10px;
@@ -33,7 +37,7 @@ main {
     border-radius: 20px;
     border-width: 1.5px;
     border-color: lightgrey;
-    box-shadow: 10px 5px 5px lightgrey;
+    box-shadow: 10px 10px 10px  seagreen;
 }
 .option-button {
     width: 95%;
@@ -48,4 +52,7 @@ main {
 #leaderboard-link:hover {
     background-color: white;
     cursor:-webkit-grab;
+}
+#leaderboard-card h2{
+    text-align:center;
 }
